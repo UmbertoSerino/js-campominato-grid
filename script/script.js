@@ -1,44 +1,35 @@
-// Consegna:
+// Consegna
 // L'utente clicca su un bottone che genererà una griglia di gioco quadrata.
 
-const buttonGames = document.querySelector (".button-start");
-console.log(buttonGames);
+const buttonGames = document.querySelector(".button-start");
 const containerBig = document.querySelector("article.container-grid");
-console.log(containerBig);
 
 
+buttonGames.addEventListener("click", function () {
+    containerBig.innerHTML = "";    
+    // Ogni cella ha un numero progressivo, da 1 a 100.
+    // Ci saranno quindi 10 caselle per ognuna delle 10 righe.
+    for (let index = 0; index < 100; index++) {
+        const currentSquare = createdSquare(index);
+        // Quando l'utente clicca su ogni cella, la cella cliccata si colora di azzurro ed emetto un messaggio in console con il numero della cella cliccata.
+        currentSquare.addEventListener("click", function () {
+            currentSquare.classList.toggle("bg-color");
+        });
+        containerBig.appendChild(currentSquare);
+    }
 
-
-
-// Ogni cella ha un numero progressivo, da 1 a 100.
-// Ci saranno quindi 10 caselle per ognuna delle 10 righe.
-
-for (let index = 0; index < 100; index++) {
-    containerBig.appendChild(createdSquare());
-    
-}
-
-
-// Quando l'utente clicca su ogni cella, la cella cliccata si colora di azzurro ed emetto un messaggio in console con il numero della cella cliccata.
-
-
-
-
-// Bonus
-// Aggiungere una select accanto al bottone di generazione, che fornisca una scelta tra tre diversi livelli di difficoltà:
-// creata select con diversi 3 tipi di difficolta'
-// con difficoltà 1 => 100 caselle, con un numero compreso tra 1 e 100, divise in 10 caselle per 10 righe;
-// con difficoltà 2 => 81 caselle, con un numero compreso tra 1 e 81, divise in 9 caselle per 9 righe;
-// con difficoltà 3 => 49 caselle, con un numero compreso tra 1 e 49, divise in 7 caselle per 7 righe;
+    containerBig.style.display = "flex";
+});
 
 // ========== Function ==========
 /**
  * funzione per creare una cella!
  */
-function createdSquare() {
-    const squareElement = document.createElement ("div");
-    squareElement.classList.add ("square-class");
-    return squareElement;    
+function createdSquare(index) {
+    const squareElement = document.createElement("div");
+    squareElement.classList.add("square-class");
+    squareElement.textContent = index + 1;
+    return squareElement;
 }
 
 

@@ -14,6 +14,17 @@ header{
 
 }
 
+main{
+    background-color: #7FFFD4;
+    width: 100%;
+    height: calc(100vh - 100px);
+}
+
+article.container-grid{
+    width: 80%;
+    margin: 0 auto;
+}
+
 button.button-start{
     margin-right: 50px;
     width: 70px;
@@ -22,4 +33,10 @@ button.button-start{
 
 .bg-color{
     background-color: aqua;
+}
+
+.square-class {
+    width: 50px;
+    height: 50px;
+    border: 1px solid black;
 }

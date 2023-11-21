@@ -3,3 +3,23 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+header{
+    background-color: #FFFFFF;
+    height: 100px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    border-bottom: 1px solid black;
+
+}
+
+button.button-start{
+    margin-right: 50px;
+    width: 70px;
+    height: 30px;
+}
+
+.bg-color{
+    background-color: aqua;
+}
